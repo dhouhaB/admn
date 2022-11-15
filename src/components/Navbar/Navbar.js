@@ -5,13 +5,13 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 
-const Navbar = () => {
+const Navbar = ({setSearch}) => {
   return (
     <div className="navbar">
     <div className="wrapper1">
 
 <div className="search">
-<input type="text" placeHolder ="Search" />
+<input type="text" placeHolder ="Search" onChange={(e)=>setSearch(e.target.value)}/>
 <SearchOutlinedIcon></SearchOutlinedIcon> 
 
 

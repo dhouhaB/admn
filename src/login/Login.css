@@ -18,16 +18,18 @@
 .wrapper{
   width: 100%;
   background: #fff;
+
   border-radius: 5px;
   box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
   align-items: center;
   justify-content: center;
+
   
 
 }
 .wrapper .title{
     height: 90px;
-    background: #df8155;
+    background:  #6caaa9;;
     border-radius: 5px 5px 0 0;
     color: #fff;
     font-size: 30px;
@@ -38,6 +40,7 @@
   }
 .wrapper form{
   padding: 30px 25px 25px 25px;
+
 }
 .wrapper form .row{
   height: 45px;
@@ -67,8 +70,8 @@ form .row input::placeholder{
   height: 100%;
   color: #fff;
   font-size: 18px;
-  background: #df8155;
-  border: 1px solid #df8155;
+  background:  #6caaa9;;
+  border: 1px solid  #6caaa9;;
   border-radius: 5px 0 0 5px;
   display: flex;
   align-items: center;
@@ -90,12 +93,12 @@ form .row input::placeholder{
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: #df8155;
-  border: 1px solid #df8155;
+  background:  #6caaa9;;
+  border: 1px solid  #6caaa9;;
   cursor: pointer;
 }
 form .button input:hover{
-  background: #df8155;
+  background:  #6caaa9;;
 }
 .wrapper form .signup-link{
   text-align: center;

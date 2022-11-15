@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import './Users.css'
+import _ from 'lodash'
 import { useEffect } from 'react';
 
-import './Users.css'
+
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import Navbar from '../Navbar/Navbar';
-import Pagination from '../pagination/Pagination';
 
-
+/*const pageSize = 2;*/
 
 const Users = () => {
 
@@ -15,10 +16,10 @@ const Users = () => {
     const [data,setData] = React.useState([])
     const [order,setOrder] = useState("ASC")
     
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(5);
-    const [search,setSearch]= useState("");
-
+    const [coinsData,setcoinsData]=useState([])
+    const[postsPerPage,setPostsPerPage]=useState(0)
+    
+    const [currentPage,setCurrentPage] = useState(1)
     
     useEffect(() => {
     
@@ -49,13 +50,11 @@ const Users = () => {
 const pageCount = data ?Math.ceil(data.length/pageSize) :0;
 const pages =_.range(1,pageCount+1)
 */
-const lastPostIndex = currentPage * postsPerPage;
-const firstPostIndex = lastPostIndex - postsPerPage;
- const t= data.slice(firstPostIndex, lastPostIndex);
+const lastPostIndex=currentPage+postsPerPage;
 
 
-
-
+const firstPostIndex= lastPostIndex -postsPerPage;
+data.slice(firstPostIndex,lastPostIndex)
 const sorting =(col)=>
 {
   if(order==='ASC')
@@ -93,7 +92,7 @@ const sorting1 =(col)=>
 
   return (
     <>
-    <Navbar setSearch={setSearch}/>
+    <Navbar/>
     <div className="table-container">
 
 <table class="table">
@@ -120,13 +119,7 @@ const sorting1 =(col)=>
 
 
 
-{t.filter((val)=>
-{if (search ==="")
-{
-  return val;
-}
-else if(val.name.toLowerCase().includes(search.toLowerCase()))
-{return val}}).map((datos) =>
+{data.map((datos) =>
 
 <tr>
 
@@ -137,7 +130,7 @@ else if(val.name.toLowerCase().includes(search.toLowerCase()))
 {datos.name}
 </td>
 <td>
-{datos.email}
+{datos.age}
 </td>
 <td>
 {datos.phone}
@@ -166,10 +159,6 @@ else if(val.name.toLowerCase().includes(search.toLowerCase()))
 
 
 
-<Pagination    totalPosts={data.length}
-                postsPerPage={postsPerPage}
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}/>
 
 
 
@@ -180,6 +169,26 @@ else if(val.name.toLowerCase().includes(search.toLowerCase()))
 
 
 
+{
+  /*
+
+
+
+<nav>
+  <ul className='pagination'> 
+  {
+    pages.map((page)=>
+    (
+      <li className='page-link'>{page}</li>
+    ))
+  }
+  
+ 
+
+  </ul>
+</nav>
+
+*/}
 
 
     </div>

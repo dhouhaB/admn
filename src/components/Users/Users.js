@@ -27,7 +27,7 @@ const Users = () => {
     
     let list =[];
     try{
-      const querySnapshot = await getDocs(collection(db, "users"));
+      const querySnapshot = await getDocs(collection(db, "_users"));
     querySnapshot.forEach((doc) => {
       list.push({id:doc.id,...doc.data()});
     
@@ -101,13 +101,14 @@ const sorting1 =(col)=>
 
 <tr>
 
-<th>id:</th>
+<th onClick={()=>sorting("name")}>id:</th>
 <th onClick={()=>sorting("name")}>Name:</th>
-<th onClick={()=>sorting1("age")}>Age:</th>
+<th onClick={()=>sorting("email")}>Email:</th>
+
 
 <th onClick={()=>sorting1("phone")}>Phone:</th>
 
-<th onClick={()=>sorting("gender")}>Gender:</th>
+
 </tr>
     </thead>
 <tbody>
@@ -139,11 +140,9 @@ else if(val.name.toLowerCase().includes(search.toLowerCase()))
 <td>
 {datos.email}
 </td>
+
 <td>
 {datos.phone}
-</td>
-<td>
-{datos.gender}
 </td>
 </tr>
 

@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.container-login {
+    background-color: #90e0ef;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 45px;
+    width: 375px;
+    max-width: 95%;
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 10%);
+}
+
+@media (max-width: 480px) {
+    .box {
+        padding: 75px 25px;
+    }
+}
+
+.box h1 {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 45px;
+    color:		#778899
+}
+
+.labelstyle{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.box form div {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.box form div:hover {
+    border-bottom-color: #00b4d8;
+}
+
+.box form div:first-of-type {
+    margin-bottom: 35px;
+}
+
+.box form div i {
+    font-size: 15px;
+    padding-left: 10px;
+    color: #b0b0b0;
+}
+
+.box form div:hover i {
+    color: #00b4d8;
+}
+
+.inputstyle {
+    font-size: 12px;
+    outline: none;
+
+    border: 1px solid  #6caaa9;;
+margin-left:5px;
+    padding: 10px;
+    min-width: 0;
+    flex: 1;
+}
+
+.inputstyle::placeholder {
+    opacity: 1;
+    color: #b0b0b0;
+    font-size: 12px;
+}
+
+.box a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+}
+
+.box a:hover {
+    color: #00b4d8;
+}
+
+.box form .forgot {
+    margin-top: 15px;
+    float: right;
+}
+
+.inputstyle1[type="submit"] {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color:#00b4d8;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    margin-top: 45px;
+    border-radius: 250px;
+}
+
+.box form input[type="submit"]:hover {
+    background-color: #0077b6;
+    cursor: pointer;
+}
+
+.box .sign-up {
+    margin-top: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+span{
+    font-size: 12px;
+    color: red;
+    margin-top: 10px;
+  }

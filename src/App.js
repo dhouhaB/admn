@@ -28,6 +28,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from "./login/Login";
 import {useContext} from 'react'
 import Users from "./components/Users/Users";
+import Loginn from "./login/Loginn";
 
 function App() {
   const currentUser=false;
@@ -45,6 +46,7 @@ function App() {
   <Route path="/login/login" element={<RequireAuth><Login/></RequireAuth>} />
   <Route path="/login" element={<Login />} />
   <Route path="/user" element={<Users />} />
+  <Route path="/in" element={<Loginn />} />
 
 
 </Routes>

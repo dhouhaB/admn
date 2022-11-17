@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1rem;
+    position: absolute;
+   
 }
 
 .pagination button {
@@ -23,6 +25,6 @@
 .pagination button.active {
     font-weight: 900;
     border-color: #101010;
-    background: #ffe400;
+    background: #6caaa9;
     color: #101010;
 }
